@@ -4,6 +4,7 @@ import type { AllSizes } from '../../../../types';
 import { Button, Flex, Form, Typography } from 'antd';
 import { sizesTuple } from '../../../../const';
 import { TShirtCountInput } from '../../../../../TShirtCountInput';
+import styles from './ManualCount.module.scss';
 
 interface ManualProps {
   onValuesChange: OnValuesChange;
@@ -22,9 +23,9 @@ export const ManualCount: FC<ManualProps> = ({
       name="basic"
       initialValues={initialValues}
     >
-      <Flex gap={12} wrap>
+      <Flex className={styles.inputsBlock} gap={12} wrap>
         {sizesTuple.map((size) => (
-          <Form.Item<AllSizes> key={size} name={size}>
+          <Form.Item<AllSizes> noStyle key={size} name={size}>
             <TShirtCountInput size={size} />
           </Form.Item>
         ))}
