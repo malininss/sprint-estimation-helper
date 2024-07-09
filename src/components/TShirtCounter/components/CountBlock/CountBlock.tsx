@@ -1,9 +1,9 @@
 import type { FC } from 'react';
-import { TShirtCountInput } from '../../../TShirtCountInput';
-import { Button, Flex, Form, Typography } from 'antd';
+import { Tabs, type TabsProps } from 'antd';
 import type { AllSizes } from '../../types';
 import type { OnValuesChange } from './types';
-import { sizesTuple } from '../../const';
+import { ManualCount } from './components/ManualCount';
+import { AutoCount } from './components/AutoCount';
 
 interface CountBlockProps {
   onValuesChange: OnValuesChange;
@@ -13,23 +13,35 @@ interface CountBlockProps {
 export const CountBlock: FC<CountBlockProps> = ({
   onValuesChange,
   initialValues,
-}) => (
-  <>
-    <Typography.Title level={2}>Count your T-Shirts</Typography.Title>
-    <Form
-      onValuesChange={onValuesChange}
-      onReset={() => onValuesChange(undefined, initialValues)}
-      name="basic"
-      initialValues={initialValues}
-    >
-      <Flex gap={12} wrap>
-        {sizesTuple.map((size) => (
-          <Form.Item<AllSizes> key={size} name={size}>
-            <TShirtCountInput size={size} />
-          </Form.Item>
-        ))}
-      </Flex>
-      <Button htmlType="reset">Reset</Button>
-    </Form>
-  </>
-);
+}) => {
+  const items: TabsProps['items'] = [
+    {
+      key: '1',
+      label: 'Count manually',
+      children: (
+        <ManualCount
+          initialValues={initialValues}
+          onValuesChange={onValuesChange}
+        />
+      ),
+    },
+    {
+      key: '2',
+      label: 'Paste text',
+      children: <AutoCount onValuesChange={onValuesChange} />,
+    },
+  ];
+
+  const handleTabChange = () => {
+    onValuesChange(undefined, { ...initialValues });
+  };
+
+  return (
+    <Tabs
+      destroyInactiveTabPane
+      onChange={handleTabChange}
+      defaultActiveKey="1"
+      items={items}
+    />
+  );
+};
