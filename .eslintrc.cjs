@@ -15,5 +15,6 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    'arrow-body-style': 'error',
   },
 };
