@@ -1,4 +1,5 @@
 import { TShirtSize } from '../enums';
+import type { TShirtSizesCounter } from '../types';
 
 export const mapTShirtToMinWorkingDay: Record<TShirtSize, number> = {
   [TShirtSize.XS]: 1,
@@ -9,7 +10,7 @@ export const mapTShirtToMinWorkingDay: Record<TShirtSize, number> = {
   [TShirtSize.XXL]: 11,
 };
 
-export const mapTShirtToMaxWorkingDay: Record<TShirtSize, number> = {
+export const mapTShirtToMaxWorkingDay: TShirtSizesCounter = {
   [TShirtSize.XS]: 1,
   [TShirtSize.S]: 3,
   [TShirtSize.M]: 5,

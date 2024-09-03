@@ -1,9 +1,9 @@
-import type { TShirtSize } from '../../../../../enums';
+import type { TShirtSize } from '../enums';
+import type { TShirtSizesCounter } from '../types';
 import {
   mapTShirtToMaxWorkingDay,
   mapTShirtToMinWorkingDay,
-} from '../../../../../helpers/mapTShirtToWorkingDay';
-import type { AllSizes } from '../../../types';
+} from './mapTShirtToWorkingDay';
 
 interface ConvertAllSizesToDaysResult {
   max: number;
@@ -11,7 +11,7 @@ interface ConvertAllSizesToDaysResult {
 }
 
 export const convertAllSizesToDays = (
-  allSizes: AllSizes
+  allSizes: TShirtSizesCounter
 ): ConvertAllSizesToDaysResult => {
   const result: ConvertAllSizesToDaysResult = {
     max: 0,

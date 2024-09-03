@@ -1,4 +1,4 @@
-import { TShirtSize } from '../../../../../../../enums';
+import { TShirtSize } from '../enums';
 
 export const extractSizesFromText = (text: string): TShirtSize[] => {
   const sizes = Object.values(TShirtSize).map((val) => val.toUpperCase());
