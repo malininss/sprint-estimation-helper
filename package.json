@@ -1,19 +1,25 @@
 {
-  "name": "tshirt-estimation-helper",
-  "private": true,
+  "name": "sprint-estimation-helper",
   "version": "0.0.0",
   "type": "module",
+  "description": "Tool for calculating T-Shirt sizes or Story Points for project estimation",
+  "author": "Serge Malinin <s@malinin.dev>",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build --outDir=docs",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/malininss/sprint-estimation-helper.git"
+  },
   "dependencies": {
     "antd": "^5.19.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
+  "license": "MIT",
   "devDependencies": {
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
