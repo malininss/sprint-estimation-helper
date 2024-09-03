@@ -1,6 +1,6 @@
 import { useCallback, useState, type FC } from 'react';
 import type { TShirtSizesCounter } from './types';
-import { initialSizes, sizesTuple } from './const';
+import { initialCount, sizesInOrderTuple } from './const';
 import { ResultBlock } from '../../ui/ResultBlock';
 import { convertAllSizesToDays } from './helpers/convertAllSizesToDays';
 import type { OnValuesChange } from '../../types';
@@ -9,7 +9,7 @@ import { CountBlock } from '../../ui/CountBlock';
 import { extractSizesFromText } from './helpers/extractSizesFromText';
 
 export const TShirtCounter: FC = () => {
-  const [sizes, setAllSizes] = useState<TShirtSizesCounter>(initialSizes);
+  const [sizes, setAllSizes] = useState<TShirtSizesCounter>(initialCount);
 
   const handleValuesChange: OnValuesChange<TShirtSize> = useCallback(
     (values) => {
@@ -23,12 +23,13 @@ export const TShirtCounter: FC = () => {
   return (
     <>
       <CountBlock
-        itemsCoCount={sizesTuple}
-        initialValues={initialSizes}
+        itemsCoCount={sizesInOrderTuple}
+        initialValues={initialCount}
         onValuesChange={handleValuesChange}
         extractorFn={extractSizesFromText}
       />
       <ResultBlock
+        calculateCapacity
         itemsCoCount={sizes}
         maxDays={workingDays.max}
         minDays={workingDays.min}

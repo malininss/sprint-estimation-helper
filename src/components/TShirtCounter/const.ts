@@ -1,7 +1,7 @@
 import { TShirtSize } from './enums';
 import type { TShirtSizesCounter } from './types';
 
-export const sizesTuple = [
+export const sizesInOrderTuple = [
   TShirtSize.XS,
   TShirtSize.S,
   TShirtSize.M,
@@ -10,7 +10,7 @@ export const sizesTuple = [
   TShirtSize.XXL,
 ] as const;
 
-export const initialSizes: TShirtSizesCounter = {
+export const initialCount: TShirtSizesCounter = {
   [TShirtSize.XS]: 0,
   [TShirtSize.S]: 0,
   [TShirtSize.M]: 0,
