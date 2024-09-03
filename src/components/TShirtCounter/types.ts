@@ -1,6 +1,6 @@
-import type { TShirtSize } from '../../enums';
+import type { TShirtSize } from './enums';
 
-export interface AllSizes {
+export interface TShirtSizesCounter {
   [TShirtSize.XS]: number;
   [TShirtSize.S]: number;
   [TShirtSize.M]: number;

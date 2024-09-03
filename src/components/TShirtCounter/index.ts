@@ -1,3 +1,1 @@
-import { TShirtCounter } from './TShirtCounter';
-
-TShirtCounter;
+export { TShirtCounter } from './TShirtCounter';
