@@ -1,0 +1,8 @@
+- Update README
+- Add tests with vitest
+- Add story points support
+  - Sprint duration input
+  - Stories per sprint to calculate capacity
+  - Save configuration to URL params
+- Save to local storage
+- Add sharing with URL parameter saving
