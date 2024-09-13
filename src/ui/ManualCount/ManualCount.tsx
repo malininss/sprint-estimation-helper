@@ -1,9 +1,10 @@
-import { Button, Flex, Form, Typography } from 'antd';
+import { Button, Flex, Form } from 'antd';
 import styles from './ManualCount.module.scss';
 import type { NamePath } from 'antd/es/form/interface';
 import { CountInput } from '../CountInput/CountInput';
 import type { OnValuesChange } from '../../types';
 import type { ReactNode } from 'react';
+import { useForm } from 'antd/es/form/Form';
 
 interface ManualProps<T extends string> {
   onValuesChange: OnValuesChange<T>;
@@ -15,13 +16,15 @@ export const ManualCount = <T extends string>({
   onValuesChange,
   initialValues,
   itemsCoCount,
-}: ManualProps<T>): ReactNode => (
-  <>
-    <Typography.Title level={2}>Count your T-Shirts</Typography.Title>
+}: ManualProps<T>): ReactNode => {
+  const [form] = useForm();
+  const isDirty = form.isFieldsTouched();
+
+  return (
     <Form
+      form={form}
       onValuesChange={(_, values) => onValuesChange(values)}
       onReset={() => onValuesChange(initialValues)}
-      name="basic"
       initialValues={initialValues}
     >
       <Flex className={styles.inputsBlock} gap={12} wrap>
@@ -31,7 +34,7 @@ export const ManualCount = <T extends string>({
           </Form.Item>
         ))}
       </Flex>
-      <Button htmlType="reset">Reset</Button>
+      {isDirty && <Button htmlType="reset">Reset</Button>}
     </Form>
-  </>
-);
+  );
+};
