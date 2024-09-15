@@ -1,6 +1,6 @@
 import { Typography } from 'antd';
-import { convertItemsObjectToString } from './helpers/convertItemsObjectToString';
 import type { ReactNode } from 'react';
+import { convertItemsObjectToString } from './helpers/convertItemsObjectToString';
 
 const { Title, Paragraph } = Typography;
 

@@ -1,5 +1,5 @@
-import { type FC, type ReactNode } from 'react';
 import { Tabs } from 'antd';
+import { type FC, type ReactNode } from 'react';
 import { AppMenuKey } from './enums';
 
 interface MenuItem {

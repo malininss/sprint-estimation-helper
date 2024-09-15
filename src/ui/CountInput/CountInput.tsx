@@ -1,5 +1,5 @@
-import type { FC, ReactNode } from 'react';
 import { InputNumber } from 'antd';
+import type { FC, ReactNode } from 'react';
 import styles from './CountInput.module.scss';
 
 interface CountInputProps {

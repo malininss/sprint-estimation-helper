@@ -9,6 +9,7 @@
     "build": "tsc -b && vite build --outDir=docs",
     "type-check": "tsc --noEmit",
     "lint": "biome lint ./src",
+    "lint:fix": "biome format --write ./src",
     "preview": "vite preview"
   },
   "repository": {

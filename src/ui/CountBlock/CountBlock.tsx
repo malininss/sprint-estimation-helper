@@ -1,8 +1,8 @@
-import type { ReactNode } from 'react';
 import { Tabs, type TabsProps } from 'antd';
+import type { ReactNode } from 'react';
 import type { OnValuesChange } from '../../types';
-import { ManualCount } from '../ManualCount';
 import { AutoCount } from '../AutoCount';
+import { ManualCount } from '../ManualCount';
 
 interface CountBlockProps<T extends string> {
   onValuesChange: OnValuesChange<T>;

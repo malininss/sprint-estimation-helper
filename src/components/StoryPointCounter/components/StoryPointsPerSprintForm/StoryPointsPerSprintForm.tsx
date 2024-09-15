@@ -1,8 +1,8 @@
-import { Button, Collapse, Form, InputNumber, Space, Tooltip } from 'antd';
 import { MinusCircleOutlined, PlusOutlined } from '@ant-design/icons';
 import { InfoCircleOutlined } from '@ant-design/icons';
-import type { SprintHistory } from '../../types';
+import { Button, Collapse, Form, InputNumber, Space, Tooltip } from 'antd';
 import type { FC } from 'react';
+import type { SprintHistory } from '../../types';
 import styles from './StoryPointsPerSprintForm.module.scss';
 
 interface StoryPointsPerSprintFormProps {

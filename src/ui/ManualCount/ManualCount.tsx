@@ -1,9 +1,9 @@
 import { Button, Flex, Form } from 'antd';
-import type { NamePath } from 'antd/es/form/interface';
-import { CountInput } from '../CountInput/CountInput';
-import type { OnValuesChange } from '../../types';
-import type { ReactNode } from 'react';
 import { useForm } from 'antd/es/form/Form';
+import type { NamePath } from 'antd/es/form/interface';
+import type { ReactNode } from 'react';
+import type { OnValuesChange } from '../../types';
+import { CountInput } from '../CountInput/CountInput';
 import styles from './ManualCount.module.scss';
 
 interface ManualProps<T extends string> {

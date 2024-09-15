@@ -1,15 +1,15 @@
-import { useCallback, useEffect, useState, type FC } from 'react';
-import type { SprintHistory, StoryPointsCounter } from './types';
-import { initialCount, storyPointsTuple } from './const';
-import { ResultBlock } from '../../ui/ResultBlock';
+import { type FC, useCallback, useEffect, useState } from 'react';
 import type { OnValuesChange } from '../../types';
-import type { StoryPoints } from './enums';
 import { CountBlock } from '../../ui/CountBlock';
-import { extractStoryPointsFromText } from './helpers/extractStoryPointsFromText';
-import { calculateCapacity } from './helpers/calculateCapacity';
-import { sumStoryPoints } from './helpers/sumStoryPoints';
+import { ResultBlock } from '../../ui/ResultBlock';
 import { StoryPointsPerSprintForm } from './components/StoryPointsPerSprintForm';
+import { initialCount, storyPointsTuple } from './const';
+import type { StoryPoints } from './enums';
+import { calculateCapacity } from './helpers/calculateCapacity';
 import { checkIsSprintHistoryValid } from './helpers/checkIsSprintHistoryValid';
+import { extractStoryPointsFromText } from './helpers/extractStoryPointsFromText';
+import { sumStoryPoints } from './helpers/sumStoryPoints';
+import type { SprintHistory, StoryPointsCounter } from './types';
 
 export const StoryPointCounter: FC = () => {
   const [storyPointsCount, setStoryPointCount] =

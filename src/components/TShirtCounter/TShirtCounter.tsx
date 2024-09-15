@@ -1,12 +1,12 @@
-import { useCallback, useState, type FC } from 'react';
-import type { TShirtSizesCounter } from './types';
-import { initialCount, sizesInOrderTuple } from './const';
-import { ResultBlock } from '../../ui/ResultBlock';
-import { convertAllSizesToDays } from './helpers/convertAllSizesToDays';
+import { type FC, useCallback, useState } from 'react';
 import type { OnValuesChange } from '../../types';
-import type { TShirtSize } from './enums';
 import { CountBlock } from '../../ui/CountBlock';
+import { ResultBlock } from '../../ui/ResultBlock';
+import { initialCount, sizesInOrderTuple } from './const';
+import type { TShirtSize } from './enums';
+import { convertAllSizesToDays } from './helpers/convertAllSizesToDays';
 import { extractSizesFromText } from './helpers/extractSizesFromText';
+import type { TShirtSizesCounter } from './types';
 
 export const TShirtCounter: FC = () => {
   const [sizes, setAllSizes] = useState<TShirtSizesCounter>(initialCount);

@@ -1,7 +1,7 @@
-import { type FC } from 'react';
 import { Typography } from 'antd';
-import { TShirtCounter } from '../components/TShirtCounter';
+import { type FC } from 'react';
 import { StoryPointCounter } from '../components/StoryPointCounter';
+import { TShirtCounter } from '../components/TShirtCounter';
 import { AppMenu, AppMenuKey } from '../ui/AppMenu';
 import './style.scss';
 

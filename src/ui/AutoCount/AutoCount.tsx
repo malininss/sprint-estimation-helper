@@ -1,7 +1,7 @@
-import { useEffect, useState, type ReactNode } from 'react';
 import { Input } from 'antd';
-import { countItems } from './helpers/countItems';
+import { type ReactNode, useEffect, useState } from 'react';
 import type { OnValuesChange } from '../../types';
+import { countItems } from './helpers/countItems';
 
 const { TextArea } = Input;
 
