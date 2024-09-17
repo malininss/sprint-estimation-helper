@@ -28,6 +28,7 @@
 		"rules": {
 			"recommended": false,
 			"complexity": {
+				"noUselessFragments": "error",
 				"noBannedTypes": "error",
 				"noExtraBooleanCast": "error",
 				"noMultipleSpacesInRegularExpressionLiterals": "error",

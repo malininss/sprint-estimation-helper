@@ -27,6 +27,7 @@ export const TShirtCounter: FC = () => {
         initialValues={initialCount}
         onValuesChange={handleValuesChange}
         extractorFn={extractSizesFromText}
+        autoCountPlaceholder="Paste your text with T-shirt sizes"
       />
       <ResultBlock
         calculateCapacity

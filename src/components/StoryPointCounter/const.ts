@@ -20,3 +20,16 @@ export const initialCount: StoryPointsCounter = {
   [StoryPoints.XL]: 0,
   [StoryPoints.XXL]: 0,
 } as const;
+
+
+const storyPoints = Object.values(StoryPoints);
+
+export const storyPointsRegexp = new RegExp(
+  `(?:^|\\s|[^\\w\\d])(${storyPoints.join('|')})(?=\\s|[^\\w\\d]|$)`,
+  'gi'
+);
+
+export const notStoryPointsRegexp = new RegExp(
+  `(?:^|\\s|[^\\w\\d])(?!${storyPoints.join('|')})(\\d+sp)(?=\\s|[^\\w\\d]|$)`,
+  'gi'
+);

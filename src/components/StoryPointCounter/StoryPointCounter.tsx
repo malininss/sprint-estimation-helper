@@ -3,7 +3,7 @@ import type { OnValuesChange } from '../../types';
 import { CountBlock } from '../../ui/CountBlock';
 import { ResultBlock } from '../../ui/ResultBlock';
 import { StoryPointsPerSprintForm } from './components/StoryPointsPerSprintForm';
-import { initialCount, storyPointsTuple } from './const';
+import { initialCount, notStoryPointsRegexp, storyPointsTuple } from './const';
 import type { StoryPoints } from './enums';
 import { calculateCapacity } from './helpers/calculateCapacity';
 import { checkIsSprintHistoryValid } from './helpers/checkIsSprintHistoryValid';
@@ -50,7 +50,12 @@ export const StoryPointCounter: FC = () => {
         itemsCoCount={storyPointsTuple}
         initialValues={initialCount}
         onValuesChange={handleValuesChange}
+        badWordsConfig={{
+          regExp: notStoryPointsRegexp,
+          warningMessage: 'Invalid story points',
+        }}
         extractorFn={extractStoryPointsFromText}
+        autoCountPlaceholder="Paste your text with Story Points"
       />
       <ResultBlock
         itemsCoCount={storyPointsCount}
