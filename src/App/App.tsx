@@ -18,7 +18,7 @@ export const App: FC = () => (
         {
           key: AppMenuKey.TShirt,
           label: <Typography.Title level={2}>T-Shirt</Typography.Title>,
-          children: <TShirtCounter />,
+          children: <TShirtCounter />
         },
       ]}
     />
