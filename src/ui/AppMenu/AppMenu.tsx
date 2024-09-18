@@ -10,8 +10,9 @@ interface MenuItem {
 
 interface AppMenuProps {
   menuItems: MenuItem[];
+  className?: string;
 }
 
-export const AppMenu: FC<AppMenuProps> = ({ menuItems }) => (
-  <Tabs size="large" items={menuItems} />
+export const AppMenu: FC<AppMenuProps> = ({ menuItems, className }) => (
+  <Tabs className={className} size="large" items={menuItems} />
 );
