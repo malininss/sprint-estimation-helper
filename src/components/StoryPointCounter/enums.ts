@@ -6,4 +6,5 @@ export enum StoryPoints {
   L = '8sp',
   XL = '13sp',
   XXL = '21sp',
+  XXXL = '34sp',
 }

@@ -31,9 +31,10 @@ export const TShirtCounter: FC = () => {
       />
       <ResultBlock
         calculateCapacity
-        itemsCoCount={sizes}
+        itemsToCount={sizes}
         maxDays={workingDays.max}
         minDays={workingDays.min}
+        shouldCapitalizeTaskCount
       />
     </>
   );

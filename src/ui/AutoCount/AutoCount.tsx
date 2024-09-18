@@ -11,8 +11,10 @@ interface AutoCountProps<T extends string> {
   badWordsConfig?: {
     regExp: RegExp;
     warningMessage: string;
+    warningDescription?: string;
   };
   placeholder: string;
+  before?: ReactNode;
 }
 
 export const AutoCount = <T extends string>({
@@ -20,6 +22,7 @@ export const AutoCount = <T extends string>({
   extractorFn,
   placeholder,
   badWordsConfig,
+  before,
 }: AutoCountProps<T>): ReactNode => {
   const [text, setText] = useState<string>('');
   const [badWords, setBadWords] = useState<Set<string>>();
@@ -41,12 +44,12 @@ export const AutoCount = <T extends string>({
 
   return (
     <>
+      {before}
       <TextArea
         value={text}
         onChange={(e) => setText(e.target.value)}
         placeholder={placeholder}
         rows={10}
-        prefix="azaza"
       />
       {badWordsConfig && !!badWords?.size && (
         <Alert
@@ -54,6 +57,7 @@ export const AutoCount = <T extends string>({
           message={
             <div>{`${badWordsConfig.warningMessage}: ${Array.from(badWords).join()}`}</div>
           }
+          description={badWordsConfig.warningDescription}
           type="warning"
           showIcon
         />

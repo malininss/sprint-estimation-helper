@@ -19,6 +19,7 @@ export const initialCount: StoryPointsCounter = {
   [StoryPoints.L]: 0,
   [StoryPoints.XL]: 0,
   [StoryPoints.XXL]: 0,
+  [StoryPoints.XXXL]: 0,
 } as const;
 
 

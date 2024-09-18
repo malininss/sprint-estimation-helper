@@ -8,18 +8,20 @@ interface ResultBlockProps<T extends string> {
   maxDays: number;
   minDays: number;
   extraData?: string;
-  itemsCoCount: Record<T, number>;
+  itemsToCount: Record<T, number>;
   calculateCapacity: boolean;
+  shouldCapitalizeTaskCount?: boolean;
 }
 
 export const ResultBlock = <T extends string>({
   maxDays,
   minDays,
   extraData,
-  itemsCoCount,
+  itemsToCount,
   calculateCapacity,
+  shouldCapitalizeTaskCount,
 }: ResultBlockProps<T>): ReactNode => {
-  const allSizesString = convertItemsObjectToString(itemsCoCount);
+  const allSizesString = convertItemsObjectToString(itemsToCount);
 
   if (!allSizesString) {
     return null;
@@ -29,7 +31,11 @@ export const ResultBlock = <T extends string>({
     <>
       <Title level={2}>Result</Title>
       <Title level={5}>Task count</Title>
-      <Paragraph>{allSizesString}</Paragraph>
+      <Paragraph>
+        {shouldCapitalizeTaskCount
+          ? allSizesString.toUpperCase()
+          : allSizesString}
+      </Paragraph>
       {extraData && <Title level={5}>{extraData}</Title>}
       {calculateCapacity ? (
         <Title level={5}>

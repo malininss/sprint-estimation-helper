@@ -8,6 +8,7 @@ export interface StoryPointsCounter {
   [StoryPoints.L]: number;
   [StoryPoints.XL]: number;
   [StoryPoints.XXL]: number;
+  [StoryPoints.XXXL]: number;
 }
 
 export interface SprintHistory {

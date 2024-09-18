@@ -10,6 +10,7 @@ export const sumStoryPoints = (counter: StoryPointsCounter): number => {
     [StoryPoints.L]: 8,
     [StoryPoints.XL]: 13,
     [StoryPoints.XXL]: 21,
+    [StoryPoints.XXXL]: 34,
   };
 
   return Object.entries(counter).reduce((total, [key, count]) => {

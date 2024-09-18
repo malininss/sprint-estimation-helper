@@ -12,8 +12,10 @@ interface CountBlockProps<T extends string> {
   badWordsConfig?: {
     regExp: RegExp;
     warningMessage: string;
+    warningDescription?: string;
   };
   autoCountPlaceholder: string;
+  beforeAutoCount?: ReactNode;
 }
 
 export const CountBlock = <T extends string>({
@@ -23,6 +25,7 @@ export const CountBlock = <T extends string>({
   extractorFn,
   badWordsConfig,
   autoCountPlaceholder,
+  beforeAutoCount,
 }: CountBlockProps<T>): ReactNode => {
   const items: TabsProps['items'] = [
     {
@@ -34,6 +37,7 @@ export const CountBlock = <T extends string>({
           extractorFn={extractorFn}
           placeholder={autoCountPlaceholder}
           badWordsConfig={badWordsConfig}
+          before={beforeAutoCount}
         />
       ),
     },

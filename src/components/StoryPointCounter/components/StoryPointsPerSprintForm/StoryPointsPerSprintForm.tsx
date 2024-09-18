@@ -4,6 +4,7 @@ import { Button, Collapse, Form, InputNumber, Space, Tooltip } from 'antd';
 import type { FC } from 'react';
 import type { SprintHistory } from '../../types';
 import styles from './StoryPointsPerSprintForm.module.scss';
+import { SprintHistoryAlert } from '../SprintHistoryAlert/SprintHistoryAlert';
 
 interface StoryPointsPerSprintFormProps {
   defaultValues: SprintHistory[];
@@ -23,7 +24,7 @@ export const StoryPointsPerSprintForm: FC<StoryPointsPerSprintFormProps> = ({
         <Collapse
           items={[
             {
-              label: 'Sprint history. Completed SP / Days per week',
+              label: 'Sprint history',
               extra: (
                 <Tooltip title="This information is used to calculate the team's capacity in days.">
                   <InfoCircleOutlined />
@@ -31,6 +32,7 @@ export const StoryPointsPerSprintForm: FC<StoryPointsPerSprintFormProps> = ({
               ),
               children: (
                 <>
+                  <SprintHistoryAlert />
                   {!!fields.length && (
                     <div className={styles.wrapper}>
                       {fields.map(({ key, name, ...restField }) => (
@@ -75,7 +77,10 @@ export const StoryPointsPerSprintForm: FC<StoryPointsPerSprintFormProps> = ({
                   <Button
                     type="dashed"
                     onClick={() =>
-                      add({ completedStoryPoints: 14, sprintDays: 14 })
+                      add({
+                        completedStoryPoints: undefined,
+                        sprintDays: undefined,
+                      })
                     }
                     icon={<PlusOutlined />}
                   >
